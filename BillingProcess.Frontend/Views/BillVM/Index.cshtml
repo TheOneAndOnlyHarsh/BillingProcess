@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Bill>
+
+<h2>Bills</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bill ID</th>
+           
+            <th>Student ID</th>
+            <th>Amount Due</th>
+            <th>Due Date</th>
+            <th>Is Paid</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BillID</td>
+               
+                <td>@item.StudentID</td>
+                <td>@item.AmountDue</td>
+                <td>@item.DueDate</td>
+                <td>@item.IsPaid</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BillID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BillID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

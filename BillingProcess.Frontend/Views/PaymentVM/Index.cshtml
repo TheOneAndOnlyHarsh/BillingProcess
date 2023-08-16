@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Payment>
+
+<h2>Payments</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Payment ID</th>
+            <th>Bill ID</th>
+            <th>Payment Date</th>
+            <th>Payment Amount</th>
+            <th>Payment Type</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PaymentId</td>
+                <td>@item.BillId</td>
+                <td>@item.PaymentDate</td>
+                <td>@item.PaymentAmount</td>
+                <td>@item.PaymentType</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PaymentId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PaymentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
