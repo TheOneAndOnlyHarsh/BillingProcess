@@ -10,4 +10,9 @@
 
         public const string Admin_Role = "Admin";
     }
+    public class StripeSettings
+    {
+        public string SecretKey { get; set; }
+        public string PublishableKey { get; set; }
+    }
 }

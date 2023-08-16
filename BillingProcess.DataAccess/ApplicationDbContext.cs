@@ -18,6 +18,8 @@ namespace BillingProcess.DataAccess
 
         public DbSet<LocalUser> LocalUsers { get; set; }
 
+        
+
 
 
     }

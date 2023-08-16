@@ -28,7 +28,9 @@
                 <td>@item.PaymentType</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.PaymentId">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.PaymentId">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.PaymentId">Delete</a>|
+                    <a asp-action="Pay" asp-route-id="@item.PaymentId">Pay</a>
+
                 </td>
             </tr>
         }

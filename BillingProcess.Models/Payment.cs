@@ -29,7 +29,11 @@ namespace BillingProcess.Models
         [EnumDataType(typeof(PaymentType), ErrorMessage = "Invalid payment type")]
         public PaymentType PaymentType { get; set; }
 
-     }
+        public string? SessionId { get; set; }
+
+        public string? PaymentIntentId { get; set; }
+
+    }
         public enum PaymentType
         {
             CreditCard =1,

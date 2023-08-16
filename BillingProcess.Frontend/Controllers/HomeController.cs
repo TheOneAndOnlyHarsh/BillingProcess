@@ -1,4 +1,5 @@
 ﻿using BillingProcess.Frontend.Models;
+using BillingProcess.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -15,7 +16,14 @@ namespace BillingProcess.Frontend.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var courses = new List<PaymentVM>
+         {
+            new PaymentVM { Name = "Mess Fee", ImageUrl = "https://www.wemakescholars.com/uploads/blog/TopprofessionalITcoursetopursueincollege.jpg"  },
+            new PaymentVM { Name = "Institutional Fee", ImageUrl = "https://www.wemakescholars.com/uploads/blog/TopprofessionalITcoursetopursueincollege.jpg"  },
+            new PaymentVM { Name = "Hostel Fee", ImageUrl = "https://www.wemakescholars.com/uploads/blog/TopprofessionalITcoursetopursueincollege.jpg"  },
+
+         };
+            return View(courses);
         }
 
         public IActionResult Privacy()

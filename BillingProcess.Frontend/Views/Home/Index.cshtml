@@ -1,8 +1,32 @@
-﻿@{
+﻿@model List<PaymentVM>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Left Bills</h1>
+</div>
+<div class="container">
+    <div class="row">
+        @foreach (var course in Model)
+        {
+            <div class="col-md-4">
+                <div class="text-center">
+                    <h1> </h1>
+                    <h4>@course.Name</h4>
+                </div>
+                <img src="@Url.Content(course.ImageUrl)" alt="@course.Name" class="img-fluid" />
+                <p class="text-center">
+
+                    <div class="text-center">
+                        <h1> </h1>
+                        <a asp-controller="PaymentVM" asp-for="Index" class="btn btn-primary">Pay Now</a>
+
+                    </div>
+                </p>
+            </div>
+        }
+
+    </div>
 </div>
